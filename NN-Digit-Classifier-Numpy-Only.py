@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 
 class NeuralNetwork:
@@ -205,7 +204,7 @@ class NeuralNetwork:
 
 
 # load and preprocess data
-data = pd.read_csv('train.csv')
+data = np.loadtxt(open("train.csv"), delimiter=",", skiprows=1).astype(int) # skip rows to remove headers and labels 
 data = np.array(data)
 np.random.shuffle(data)
 # prep testing data
@@ -239,5 +238,5 @@ print("Resulting Test Accuracy:", round(dev_accuracy * 100, 2), "%")
 
 # References
 # Implemented after completing Sentdex Neural Network Course
-# Code adapted based on Samson Zhang's notebook and video demonstration.
+# Code adapted based on Samson Zhang's Kaggle.
 # written: July 2023
