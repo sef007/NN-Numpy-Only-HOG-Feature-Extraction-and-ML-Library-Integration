@@ -32,6 +32,12 @@ m_train, _ = X_train.shape
 
 
 def init_params():
+    """
+    Initialise the parameters of the neural network
+
+    Returns:
+        tuple: Initialised weights and biases.
+    """
     W1 = np.random.rand(20, hog_features_transformed.shape[1]) - 0.5
     b1 = np.random.rand(20, 1) - 0.5
     W2 = np.random.rand(10, 20) - 0.5
@@ -70,6 +76,21 @@ def softmax(Z):
 
 
 def forward_prop(W1, b1, W2, b2, W3, b3, X):
+    """
+    performs forward propagation through the neural network
+
+    Args:
+        W1 (numpy.ndarray): Weights for the first layer.
+        b1 (numpy.ndarray): Biases for the first layer.
+        W2 (numpy.ndarray): Weights for the second layer.
+        b2 (numpy.ndarray): Biases for the second layer.
+        W3 (numpy.ndarray): Weights for the third layer.
+        b3 (numpy.ndarray): Biases for the third layer.
+        X (numpy.ndarray): Input data.
+
+    Returns:
+        tuple: Outputs and activations of each layer
+    """
     Z1 = W1.dot(X.T) + b1
     A1 = ReLU(Z1)
     Z2 = W2.dot(A1) + b2
@@ -136,6 +157,9 @@ def backward_prop(Z1, A1, Z2, A2, Z3, A3, W1, W2, W3, X, Y):
 
 
 def update_params(W1, b1, W2, b2, W3, b3, dW1, db1, dW2, db2, dW3, db3, alpha):
+    """
+        updates the parameters of the NN and implements alpha (the learning rate)
+    """
     W1 -= alpha * dW1
     b1 -= alpha * db1
     W2 -= alpha * dW2
@@ -160,19 +184,31 @@ def get_predictions(A3):
 
 def get_accuracy(predictions, Y):
     """
-    Computes the accuracy of the predictions compared to the true labels.
+    computes the accuracy of the predictions compared to the true labels
 
     Args:
         predictions (numpy.ndarray): Predicted labels.
         Y (numpy.ndarray): True labels.
 
     Returns:
-        float: Accuracy of the predictions.
+        float: Accuracy of the predictions
     """
     return np.mean(predictions == Y)
 
 
 def gradient_descent(X, Y, alpha, iterations):
+    """
+    Performs gradient descent to train the neural network.
+
+    Args:
+        X (numpy.ndarray): Input data.
+        Y (numpy.ndarray): True labels.
+        alpha (float): Learning rate.
+        iterations (int): Number of iterations.
+
+    Returns:
+        tuple: Updated weights and biases.
+    """
     W1, b1, W2, b2, W3, b3 = init_params()
     for i in range(iterations):
         Z1, A1, Z2, A2, Z3, A3 = forward_prop(W1, b1, W2, b2, W3, b3, X)
