@@ -42,10 +42,28 @@ def init_params():
 
 
 def ReLU(Z):
+    """
+    applies the Rectified Linear Unit (ReLU) activation function element-wise to the input Z.
+
+    Args:
+        Z (numpy.ndarray): Input to the activation function
+
+    Returns:
+        numpy.ndarray: Result of applying the ReLU activation function to Z
+    """
     return np.maximum(Z, 0)
 
 
 def softmax(Z):
+    """
+    applies the softmax activation function to the input Z
+
+    Args:
+        Z (numpy.ndarray): Input to the activation function
+
+    Returns:
+        numpy.ndarray: Result of applying the softmax activation function to Z
+    """
     max_Z = np.max(Z, axis=0)
     A = np.exp(Z - max_Z) / np.sum(np.exp(Z - max_Z), axis=0)
     return A
@@ -62,10 +80,28 @@ def forward_prop(W1, b1, W2, b2, W3, b3, X):
 
 
 def ReLU_deriv(Z):
+    """
+    computes the derivative of the ReLU activation function with respect to the input Z
+
+    Args:
+        z (numpy.ndarray): Input to the activation function
+
+    Returns:
+        numpy.ndarray: Derivative of the ReLU activation function with respect to Z
+    """
     return (Z > 0).astype(int)
 
 
 def one_hot(Y):
+    """
+    converts the true labels to one-hot encoded form
+
+    Args:
+        Y (numpy.ndarray): True labels.
+
+    Returns:
+        numpy.ndarray: One-hot encoded labels.
+    """
     one_hot_Y = np.zeros((Y.size, Y.max() + 1))
     one_hot_Y[np.arange(Y.size), Y.astype(int)] = 1
     one_hot_Y = one_hot_Y.T
@@ -73,6 +109,7 @@ def one_hot(Y):
 
 
 def backward_prop(Z1, A1, Z2, A2, Z3, A3, W1, W2, W3, X, Y):
+    
     one_hot_Y = one_hot(Y)
 
     # Layer 1:
@@ -109,10 +146,29 @@ def update_params(W1, b1, W2, b2, W3, b3, dW1, db1, dW2, db2, dW3, db3, alpha):
 
 
 def get_predictions(A3):
+    """
+    computes the predicted labels based on the output activations
+
+    Args:
+        A3 (numpy.ndarray): Output activations of the neural network
+
+    Returns:
+        numpy.ndarray: Predicted labels
+    """
     return np.argmax(A3, axis=0)
 
 
 def get_accuracy(predictions, Y):
+    """
+    Computes the accuracy of the predictions compared to the true labels.
+
+    Args:
+        predictions (numpy.ndarray): Predicted labels.
+        Y (numpy.ndarray): True labels.
+
+    Returns:
+        float: Accuracy of the predictions.
+    """
     return np.mean(predictions == Y)
 
 
