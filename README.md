@@ -2,7 +2,7 @@
 
 # Exploring Digit Classification Programs:
 
-Digit classification plays a crucial role in various applications, from optical character recognition to automated document processing. In this overview, we'll explore three different programs that implement digit classification using different techniques and libraries. Let's dive into the technical highlights of each program.
+Digit classification plays a crucial role in various applications, from optical character recognition to automated document processing. In this repository, I will outline three different programs that implement digit classification using different techniques and libraries. This aim of this README is to provide a overview of the technical highlights of each program.
 
 ## Program 1: NN-Digit-Classifier-Numpy-Only(V1)
 
