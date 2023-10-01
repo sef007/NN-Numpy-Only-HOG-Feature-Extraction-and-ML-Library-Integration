@@ -28,13 +28,11 @@ Digit classification plays a crucial role in various applications, from optical 
 
 ### Main Technical Features:
 
-- Extracts HOG features from the MNIST dataset using scikit-image's HOG feature extraction.
-- Applies feature scaling using **`StandardScaler`** from scikit-learn.
-- Splits the data into training and testing sets using **`train_test_split`**.
-- Implements a neural network using the Keras library.
-- Utilises dense layers with ReLU activation and softmax for multi-class classification.
+- Applies feature scaling using StandardScaler from scikit-learn.
 - Compiles the model with the Adam optimiser and sparse categorical cross-entropy loss.
-- Trains the model using the training data for a specified number of epochs and batch size.
+- Trains the model using the training data for a specified number of epochs and batch size. 
+- Implements a neural network using the Keras library.
+- Compiles the model with the Adam optimiser and sparse categorical cross-entropy loss.
 
 **Exploring Minimum Redundancy Maximum Relevance (mRMR) feature selection:**
 
