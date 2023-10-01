@@ -16,7 +16,7 @@ Digit classification plays a crucial role in various applications, from optical 
 - Implements gradient descent for parameter updates.
 - Includes utility methods for data preprocessing, evaluation, and accuracy computation.
 
-![HOG Intuition | Simple Explanation | Feature Descriptor & Engineering](data/hog.png)
+![HOG Intuition | Simple Explanation | Feature Descriptor & Engineering](data/hog.png|width=1000)
 ## Program 2:  Histogram-Oriented-Gradients-NN-Implementation (V2)
 
 ### Main Technical Features:
