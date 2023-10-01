@@ -34,14 +34,9 @@ Digit classification plays a crucial role in various applications, from optical 
 - Implements a neural network using the Keras library.
 - Compiles the model with the Adam optimiser and sparse categorical cross-entropy loss.
 
-**Exploring Minimum Redundancy Maximum Relevance (mRMR) feature selection:**
-
-Another method that I thought could be effective for feature extraction is mRMR. 
-
+**Exploring Minimum Redundancy Maximum Relevance (mRMR) feature selection:** 
 - mRMR is an algorithm that selects informative features in classification tasks.
 - It chooses features that are highly relevant to the target variable and have low redundancy with each other.
 - By maximising relevance and minimising redundancy it is able to form a subset of key features.
 - Using this method means that it would potentially select more relevant and non-redundant features from a high-dimensional input.
 - This would further enhance the efficiency, performance, and how the NN interprets the data.
-
-These three programs demonstrate different approaches to digit classification, highlighting various techniques and library integrations. Each program emphasises key technical aspects such as neural network implementation, HOG feature extraction, activation functions, gradient descent, and evaluation of accuracy. By exploring these programs, we gain valuable insights into the diverse methods and tools available for tackling digit classification tasks.
