@@ -4,7 +4,7 @@
 
 Digit classification plays a crucial role in various applications, from optical character recognition to automated document processing. In this repository, I will outline three different programs that implement digit classification using different techniques and libraries. This aim of this README is to provide a overview of the technical highlights of each program.
 
-![Image of Neural Network - ref 3 Blue1Brown](data/NN_pic.png|width=1000)
+![Image of Neural Network - ref 3 Blue1Brown](data/NN_pic.png =1000x)
 
 ## Program 1: NN-Digit-Classifier-Numpy-Only(V1)
 
